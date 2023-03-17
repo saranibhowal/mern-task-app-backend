@@ -11,7 +11,9 @@ const app = express();
 //Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
-app.use(cors());
+app.use(cors({
+    origin: ["http://localhost:3000/","https://mern-task-app-8tj8.onrender.com'"]
+}));
 app.use("/api/tasks",taskRoutes);
 // const logger = (req, res, next) => {
 //     console.log('Middleware ran');
