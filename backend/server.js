@@ -12,7 +12,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cors({
-    origin: '*'
+    AccessControlAllowOrigin: '*',
+    origin: '*',
+    allowedHeaders: true
 }));
 app.use("/api/tasks",taskRoutes);
 // const logger = (req, res, next) => {
