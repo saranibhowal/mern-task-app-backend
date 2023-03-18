@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cors({
-    origin: ['http://localhost:5000/','https://mern-task-app-api-itqm.onrender.com/']
+    origin: ['http://localhost:5000/','https://mern-task-app-api.onrender.com']
 }));
 app.use("/api/tasks",taskRoutes);
 // const logger = (req, res, next) => {
