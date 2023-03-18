@@ -12,9 +12,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cors({
-    AccessControlAllowOrigin: '*',
-    origin: '*',
-    allowedHeaders: true
+    origin: ['http://localhost:5000/','https://mern-task-app-api.onrender.com'],    
+    headers: ["Content-Type"],
+    credentials: true,
 }));
 app.use("/api/tasks",taskRoutes);
 // const logger = (req, res, next) => {
