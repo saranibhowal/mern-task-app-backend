@@ -11,9 +11,15 @@ const app = express();
 //Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
-app.use(cors({
-    origin: '*'
-}));
+const corsOptions ={
+    origin:['http://localhost:5000', 'https://mern-task-app-api-sarani.onrender.com'], 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
+// app.use(cors({
+//     origin: ["http://localhost:5000","https://mern-task-app-api-sarani.onrender.com"]
+// }));
 
 app.use("/api/tasks",taskRoutes);
 // const logger = (req, res, next) => {
